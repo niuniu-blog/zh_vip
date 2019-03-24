@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql:///imiros
+    username: root
+    password: Qq330640++
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    thymeleaf:
+      prefix: classpath:/templates/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.vip.zh.pojo
+
+logging:
+  level:
+    com:
+      vip:
+        zh:
+          dao: debug
+
