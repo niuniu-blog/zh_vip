@@ -37,6 +37,11 @@ public class WebSiteDO implements Serializable {
      */
     private String remark;
     /**
+     * 页面路由地址
+     */
+    private String pageRouting;
+
+    /**
      * 状态枚举
      */
     enum StatusEnum {

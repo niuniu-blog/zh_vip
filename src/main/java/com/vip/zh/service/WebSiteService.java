@@ -1,6 +1,6 @@
 package com.vip.zh.service;
 
-import com.vip.zh.pojo.vo.WebSiteVO;
+import com.vip.zh.pojo.WebSiteDO;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ import java.util.List;
  * @date 2019-03-19
  */
 public interface WebSiteService {
-    List<WebSiteVO> listWebSite();
+    List<WebSiteDO> listWebSite();
 }

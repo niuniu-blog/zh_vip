@@ -1,106 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.vip.zh.dao.WebSiteDOMapper">
-  <resultMap id="BaseResultMap" type="com.vip.zh.pojo.WebSiteDO">
-    <id column="id" jdbcType="INTEGER" property="id"/>
-    <result column="web_site_code" jdbcType="VARCHAR" property="webSiteCode"/>
-    <result column="web_site_name" jdbcType="VARCHAR" property="webSiteName"/>
-    <result column="web_site_type" jdbcType="VARCHAR" property="webSiteType"/>
-    <result column="status" jdbcType="VARCHAR" property="status"/>
-    <result column="remark" jdbcType="VARCHAR" property="remark"/>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, web_site_code, web_site_name, web_site_type, status, remark
+    <resultMap id="BaseResultMap" type="com.vip.zh.pojo.WebSiteDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="web_site_code" jdbcType="VARCHAR" property="webSiteCode"/>
+        <result column="web_site_name" jdbcType="VARCHAR" property="webSiteName"/>
+        <result column="web_site_type" jdbcType="VARCHAR" property="webSiteType"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="page_routing" jdbcType="VARCHAR" property="pageRouting"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, web_site_code, web_site_name, web_site_type, status, remark, page_routing
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"/>
-    from web_site
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from web_site
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="listWebbSite" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from web_site;
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from web_site
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.vip.zh.pojo.WebSiteDO">
+    <insert id="insert" parameterType="com.vip.zh.pojo.WebSiteDO">
     insert into web_site (id, web_site_code, web_site_name, 
-      web_site_type, status, remark
-      )
+      web_site_type, status, remark, 
+      page_routing)
     values (#{id,jdbcType=INTEGER}, #{webSiteCode,jdbcType=VARCHAR}, #{webSiteName,jdbcType=VARCHAR}, 
-      #{webSiteType,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
-      )
+      #{webSiteType,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{pageRouting,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.vip.zh.pojo.WebSiteDO">
-    insert into web_site
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="webSiteCode != null">
-        web_site_code,
-      </if>
-      <if test="webSiteName != null">
-        web_site_name,
-      </if>
-      <if test="webSiteType != null">
-        web_site_type,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="remark != null">
-        remark,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="webSiteCode != null">
-        #{webSiteCode,jdbcType=VARCHAR},
-      </if>
-      <if test="webSiteName != null">
-        #{webSiteName,jdbcType=VARCHAR},
-      </if>
-      <if test="webSiteType != null">
-        #{webSiteType,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.vip.zh.pojo.WebSiteDO">
-    update web_site
-    <set>
-      <if test="webSiteCode != null">
-        web_site_code = #{webSiteCode,jdbcType=VARCHAR},
-      </if>
-      <if test="webSiteName != null">
-        web_site_name = #{webSiteName,jdbcType=VARCHAR},
-      </if>
-      <if test="webSiteType != null">
-        web_site_type = #{webSiteType,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.vip.zh.pojo.WebSiteDO">
+    <insert id="insertSelective" parameterType="com.vip.zh.pojo.WebSiteDO">
+        insert into web_site
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="webSiteCode != null">
+                web_site_code,
+            </if>
+            <if test="webSiteName != null">
+                web_site_name,
+            </if>
+            <if test="webSiteType != null">
+                web_site_type,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="pageRouting != null">
+                page_routing,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="webSiteCode != null">
+                #{webSiteCode,jdbcType=VARCHAR},
+            </if>
+            <if test="webSiteName != null">
+                #{webSiteName,jdbcType=VARCHAR},
+            </if>
+            <if test="webSiteType != null">
+                #{webSiteType,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="pageRouting != null">
+                #{pageRouting,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.vip.zh.pojo.WebSiteDO">
+        update web_site
+        <set>
+            <if test="webSiteCode != null">
+                web_site_code = #{webSiteCode,jdbcType=VARCHAR},
+            </if>
+            <if test="webSiteName != null">
+                web_site_name = #{webSiteName,jdbcType=VARCHAR},
+            </if>
+            <if test="webSiteType != null">
+                web_site_type = #{webSiteType,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="pageRouting != null">
+                page_routing = #{pageRouting,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.vip.zh.pojo.WebSiteDO">
     update web_site
     set web_site_code = #{webSiteCode,jdbcType=VARCHAR},
       web_site_name = #{webSiteName,jdbcType=VARCHAR},
       web_site_type = #{webSiteType,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
-      remark = #{remark,jdbcType=VARCHAR}
+      remark = #{remark,jdbcType=VARCHAR},
+      page_routing = #{pageRouting,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,5 +1,7 @@
 package com.vip.zh.service.impl;
 
+import com.vip.zh.dao.VipDOMapper;
+import com.vip.zh.pojo.VipDO;
 import com.vip.zh.service.VipAccountService;
 import com.vip.zh.util.PasswordUtil;
 import org.springframework.stereotype.Service;

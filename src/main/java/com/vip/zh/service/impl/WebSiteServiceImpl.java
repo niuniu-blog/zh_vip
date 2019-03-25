@@ -1,9 +1,11 @@
 package com.vip.zh.service.impl;
 
-import com.vip.zh.pojo.vo.WebSiteVO;
+import com.vip.zh.dao.WebSiteDOMapper;
+import com.vip.zh.pojo.WebSiteDO;
 import com.vip.zh.service.WebSiteService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -13,11 +15,12 @@ import java.util.List;
 @Service("WebSiteService")
 public class WebSiteServiceImpl implements WebSiteService {
 
+    @Resource
+    private WebSiteDOMapper webSiteMapper;
+
 
     @Override
-    public List<WebSiteVO> listWebSite() {
-
-        return null;
+    public List<WebSiteDO> listWebSite() {
+        return webSiteMapper.listWebbSite();
     }
-
 }

@@ -2,6 +2,8 @@ package com.vip.zh.dao;
 
 import com.vip.zh.pojo.WebSiteDO;
 
+import java.util.List;
+
 public interface WebSiteDOMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface WebSiteDOMapper {
     int updateByPrimaryKeySelective(WebSiteDO record);
 
     int updateByPrimaryKey(WebSiteDO record);
+
+    List<WebSiteDO> listWebbSite();
 }
