@@ -32,7 +32,10 @@ public class WebSiteDO implements Serializable {
      * 网站状态
      */
     private String status;
-
+    /**
+     * 备注
+     */
+    private String remark;
     /**
      * 状态枚举
      */
