@@ -2,6 +2,8 @@ package com.vip.zh.dao;
 
 import com.vip.zh.pojo.VipDO;
 
+import java.util.List;
+
 public interface VipDOMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface VipDOMapper {
     int updateByPrimaryKeySelective(VipDO record);
 
     int updateByPrimaryKey(VipDO record);
+
+    List<VipDO> listVipByWebSiteId(Integer id);
 }
