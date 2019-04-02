@@ -19,15 +19,12 @@ import java.util.List;
 @Service("VipAccountService")
 public class VipAccountServiceImpl implements VipAccountService {
 
+    private static List<WebSiteDO> webSiteDOS;
     @Resource
     private VipDOMapper vipMapper;
-
     @Resource
     private WebSiteDOMapper webSiteDOMapper;
-
     private String[] telFirst = "134,135,136,137,138,139,150,151,152,157,158,159,130,131,132,155,156,133,153".split(",");
-
-    private static List<WebSiteDO> webSiteDOS;
 
     /**
      * 生成账号
@@ -49,6 +46,8 @@ public class VipAccountServiceImpl implements VipAccountService {
             vipDO.setVipPassword(password);
             vipDO.setUploadTime(LocalDateTime.now());
             vipDO.setWebSiteId(webSiteDO.getId());
+            vipDO.setCreator("SYSTEM");
+            vipDO.setUploadTime(LocalDateTime.now());
             vipMapper.insert(vipDO);
         }
     }

@@ -18,7 +18,7 @@ public class VipAccountCreatJob {
     @Resource(name = "VipAccountService")
     private VipAccountService vipAccountService;
 
-    @Scheduled(cron = "0 * 11 * * ?")
+    @Scheduled(cron = "0/5 * * * * ?")
     public void createAccount() {
         vipAccountService.createAccount();
     }
