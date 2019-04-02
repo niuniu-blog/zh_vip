@@ -6,6 +6,8 @@ import com.vip.zh.pojo.VipDO;
 import com.vip.zh.pojo.WebSiteDO;
 import com.vip.zh.service.VipAccountService;
 import com.vip.zh.util.PasswordUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,6 +20,8 @@ import java.util.List;
  */
 @Service("VipAccountService")
 public class VipAccountServiceImpl implements VipAccountService {
+
+    private final static Logger logger = LoggerFactory.getLogger(VipAccountServiceImpl.class);
 
     private static List<WebSiteDO> webSiteDOS;
     @Resource
@@ -40,7 +44,6 @@ public class VipAccountServiceImpl implements VipAccountService {
         for (WebSiteDO webSiteDO : webSiteDOS) {
             String account = getTel();
             String password = PasswordUtil.randomPassword(8);
-            System.out.println("账号：" + account + " 密码：" + password);
             VipDO vipDO = new VipDO();
             vipDO.setVipAccount(account);
             vipDO.setVipPassword(password);
@@ -48,6 +51,7 @@ public class VipAccountServiceImpl implements VipAccountService {
             vipDO.setWebSiteId(webSiteDO.getId());
             vipDO.setCreator("SYSTEM");
             vipDO.setUploadTime(LocalDateTime.now());
+            logger.info("生成vip-->" + vipDO.toString());
             vipMapper.insert(vipDO);
         }
     }

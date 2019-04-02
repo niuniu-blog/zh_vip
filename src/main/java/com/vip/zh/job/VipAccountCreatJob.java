@@ -18,7 +18,11 @@ public class VipAccountCreatJob {
     @Resource(name = "VipAccountService")
     private VipAccountService vipAccountService;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    /**
+     * 每天0点启动一个小时 插入数据
+     */
+    @Scheduled(cron = "* * 0 * * ?")
+    //@Scheduled(cron = "* * * * * ?")
     public void createAccount() {
         vipAccountService.createAccount();
     }
