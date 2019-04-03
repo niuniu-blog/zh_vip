@@ -21,7 +21,7 @@ public class VipAccountCreatJob {
     /**
      * 每天0点启动一个小时 插入数据
      */
-    @Scheduled(cron = "* * 0 * * ?")
+    @Scheduled(cron = "0 * 0 * * ?")
     //@Scheduled(cron = "* * * * * ?")
     public void createAccount() {
         vipAccountService.createAccount();

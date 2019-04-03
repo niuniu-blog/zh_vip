@@ -58,4 +58,68 @@ public class VipDO {
          */
         UN_ABLE
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getWebSiteId() {
+        return webSiteId;
+    }
+
+    public void setWebSiteId(Integer webSiteId) {
+        this.webSiteId = webSiteId;
+    }
+
+    public String getVipAccount() {
+        return vipAccount;
+    }
+
+    public void setVipAccount(String vipAccount) {
+        this.vipAccount = vipAccount;
+    }
+
+    public String getVipPassword() {
+        return vipPassword;
+    }
+
+    public void setVipPassword(String vipPassword) {
+        this.vipPassword = vipPassword;
+    }
+
+    public LocalDateTime getUploadTime() {
+        return uploadTime;
+    }
+
+    public void setUploadTime(LocalDateTime uploadTime) {
+        this.uploadTime = uploadTime;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
 }

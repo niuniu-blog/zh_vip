@@ -72,4 +72,59 @@ public class WebSiteDO implements Serializable {
 
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getWebSiteCode() {
+        return webSiteCode;
+    }
+
+    public void setWebSiteCode(String webSiteCode) {
+        this.webSiteCode = webSiteCode;
+    }
+
+    public String getWebSiteName() {
+        return webSiteName;
+    }
+
+    public void setWebSiteName(String webSiteName) {
+        this.webSiteName = webSiteName;
+    }
+
+    public String getWebSiteType() {
+        return webSiteType;
+    }
+
+    public void setWebSiteType(String webSiteType) {
+        this.webSiteType = webSiteType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getPageRouting() {
+        return pageRouting;
+    }
+
+    public void setPageRouting(String pageRouting) {
+        this.pageRouting = pageRouting;
+    }
 }

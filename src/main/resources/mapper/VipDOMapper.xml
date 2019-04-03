@@ -20,11 +20,13 @@
         from vip
         where id = #{id,jdbcType=INTEGER}
     </select>
-    <select id="listVipByWebSiteId" resultType="com.vip.zh.pojo.VipDO">
+    <select id="listVipByWebSiteId" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from vip
         where web_site_id = #{id}
+        order by upload_time desc
+        limit 12
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from vip

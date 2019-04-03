@@ -52,7 +52,7 @@ CREATE TABLE `web_site` (
 -- Records of web_site
 -- ----------------------------
 BEGIN;
-INSERT INTO `web_site` VALUES (1, 'AIQIYI', '爱奇艺', 'VIDEO', 'ABLE', '爱奇艺视频会员-每日更新-免费看视频-免费下载视频', 'aiqiyi/aiqiyi.html');
+INSERT INTO `web_site` VALUES (1, 'AIQIYI', '爱奇艺', 'VIDEO', 'ABLE', '爱奇艺视频会员-每日更新-免费看视频-免费下载视频', 'vip/vip.html');
 INSERT INTO `web_site` VALUES (2, 'TENGXUN', '腾讯视频', 'VIDEO', 'ABLE', '腾讯视频会员-免费看视频-会员账号每日更新', NULL);
 INSERT INTO `web_site` VALUES (3, 'LESHI', '乐视视频', 'VIDEO', 'ABLE', '乐视视频会员-免费观看-免费账号获取-最新能用', NULL);
 INSERT INTO `web_site` VALUES (4, 'YOUKU', '优酷网', 'VIDEO', 'ABLE', '优酷网会员-免费会员-观看免费电影-海量资源', NULL);

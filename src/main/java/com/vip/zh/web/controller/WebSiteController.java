@@ -28,6 +28,11 @@ public class WebSiteController {
     @Resource(name = "VipAccountService")
     private VipAccountService vipAccountService;
 
+    /**
+     * 获取每日生成的账号密码
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/vip/{id}", method = RequestMethod.GET)
     public List<VipDO> listVipByWebSiteId(@PathVariable(name = "id") Integer id) {
         System.out.println(id);
