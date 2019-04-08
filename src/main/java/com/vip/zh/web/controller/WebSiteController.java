@@ -22,7 +22,6 @@ import java.util.List;
 @RestController
 public class WebSiteController {
 
-
     @Resource(name = "WebSiteService")
     private WebSiteService webSiteService;
 
