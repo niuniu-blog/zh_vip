@@ -111,7 +111,8 @@
         var currentdate = year + seperator1 + month + seperator1 + strDate;
         return currentdate;
     }
-    var loacl_id=3;
+
+    var loacl_id = 4;
     $(function () {
         $.get("/WebSite/vip/"+loacl_id+"", function (datas) {
             var account = $("#account");
