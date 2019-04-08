@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/imiros?serverTimezone=UTC
     username: root
-      password: 951023
+    password: 951023
     #    password: Qq330640++
     driver-class-name: com.mysql.cj.jdbc.Driver
 
@@ -20,4 +20,4 @@ logging:
         zh:
           dao: debug
 server:
-  port: 80
+  port: 8080
