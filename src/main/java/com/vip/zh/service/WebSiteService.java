@@ -12,4 +12,7 @@ import java.util.List;
  */
 public interface WebSiteService {
     List<WebSiteDO> listWebSite();
+
+    List<WebSiteDO> getWebSite();
+
 }

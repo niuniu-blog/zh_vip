@@ -23,4 +23,9 @@ public class WebSiteServiceImpl implements WebSiteService {
     public List<WebSiteDO> listWebSite() {
         return webSiteMapper.listWebbSite();
     }
+
+    @Override
+    public List<WebSiteDO> getWebSite() {
+        return webSiteMapper.getWebSite();
+    }
 }

@@ -28,8 +28,15 @@ public class WebSiteController {
     @Resource(name = "VipAccountService")
     private VipAccountService vipAccountService;
 
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<WebSiteDO> getWebSite() {
+        return webSiteService.getWebSite();
+    }
+
+
     /**
      * 获取每日生成的账号密码
+     *
      * @param id
      * @return
      */

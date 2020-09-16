@@ -18,4 +18,6 @@ public interface WebSiteDOMapper {
     int updateByPrimaryKey(WebSiteDO record);
 
     List<WebSiteDO> listWebbSite();
+
+    List<WebSiteDO> getWebSite();
 }

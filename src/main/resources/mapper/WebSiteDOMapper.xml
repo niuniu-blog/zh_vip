@@ -24,16 +24,19 @@
         <include refid="Base_Column_List"/>
         from web_site;
     </select>
+    <select id="getWebSite" resultType="com.vip.zh.pojo.WebSiteDO">
+        select * from web_site
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from web_site
     where id = #{id,jdbcType=INTEGER}
   </delete>
     <insert id="insert" parameterType="com.vip.zh.pojo.WebSiteDO">
-    insert into web_site (id, web_site_code, web_site_name, 
-      web_site_type, status, remark, 
+    insert into web_site (id, web_site_code, web_site_name,
+      web_site_type, status, remark,
       page_routing)
-    values (#{id,jdbcType=INTEGER}, #{webSiteCode,jdbcType=VARCHAR}, #{webSiteName,jdbcType=VARCHAR}, 
-      #{webSiteType,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{webSiteCode,jdbcType=VARCHAR}, #{webSiteName,jdbcType=VARCHAR},
+      #{webSiteType,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
       #{pageRouting,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.vip.zh.pojo.WebSiteDO">
